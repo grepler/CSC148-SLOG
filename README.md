@@ -1,0 +1,1 @@
+This is a Student Learning Blog for CSC148.
