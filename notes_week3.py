@@ -45,3 +45,62 @@ print(L)
 S = {j for i in range(2, 8) for j in range(i**2, 50, i)}
 print(S)
 
+
+# Common ADT (Abstract Data Types)
+# here you want to separate the 'what' from the 'how'
+# the class is the python representation of the ADT
+# contains the methods and operations that can be performed on the stored data
+
+
+# Recursion
+
+
+
+class Stack:
+    """
+    Stack object for managing contents, last in first out (LIFO)
+    """
+
+
+    def __init__(self):
+        """
+        Initialize the Stack object.
+        :return: None
+        """
+        self._data = []
+
+    def isEmpty(self):
+        """
+        Return True is Stack contains no data.
+        :return: bool
+        """
+        return self._data == []
+
+    def push(self, i):
+        """
+        Add data to stack.
+        :return: None
+        """
+        self._data.append(i)
+        return None
+
+    def peek(self):
+        """
+        Return last value of list without mutating list.
+        :return: Any obj
+        """
+        return self._data[-1]
+
+    def size(self):
+        """
+        Return length of top-level list.
+        :return: int
+        """
+        return len(self._data)
+
+    def pop(self):
+        """
+        Return and remove last entered value from data list
+        :return: obj
+        """
+        return self._data.pop()
