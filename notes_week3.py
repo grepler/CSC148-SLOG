@@ -76,7 +76,7 @@ class Stack:
         """
         return self._data == []
 
-    def push(self, i):
+    def put(self, i):
         """
         Add data to stack.
         :return: None
@@ -98,9 +98,27 @@ class Stack:
         """
         return len(self._data)
 
-    def pop(self):
+    def remove(self):
         """
         Return and remove last entered value from data list
         :return: obj
         """
         return self._data.pop()
+
+# checking API
+
+s = Stack()
+print("Is S Empty? ", s.isEmpty())
+s.put(4)
+s.put('dog')
+print("Read Top Element of Stack: ", s.peek())
+s.put(True)
+print (s)
+print("Is S Empty? ", s.isEmpty())
+s.put(8.4)
+print (s)
+print("Remove Top Element of Stack: ",s.remove())
+print("Size of Stack: ", s.size())
+print("Remove One More Element from Stack: ", s.remove())
+print(s)
+print("Size of Stack: ", s.size())
