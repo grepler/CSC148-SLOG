@@ -18,6 +18,43 @@ For more information about the purpose of this repository,
 visit: http://www.cdf.toronto.edu/~csc148h/winter/SLOG/slog.pdf
 
 
+# Week 4 Comments:
+
+We're learning about linked lists and how to traverse the nodes. In class, prof said that a network should contain no loops. He said that in that case the program would run endlessly. I wrote a small modification to catch those types of errors.
+
+``` python
+class Node:
+
+    def __init__(self, node_value=None, next_node=None):
+        self.node_value = node_value
+        self.next_node = next_node
+
+    def __str__(self):
+        return str(self.node_value)
+
+    def end_node(self, _depth=0, _seen=0):
+        """
+        Recurses to the end of the node chain and returns the final Node.
+        Precondition: Node chain should not be loop-linked. Will retain a list of seen id's to prevent loops.
+        :param seen: lst (empty)
+        :return: Node
+        """
+
+        if _depth is 0:             # I added a variable that is only 0 when the external variable
+            _depth = 1              # is default (i.e. first recursion level).
+            _seen = []
+
+        if self in _seen:
+            return ValueError("Infinite loop detected")
+        if self.next_node is not None:
+            _seen.append(self)
+            return Node.end_node(self.next_node, _depth, _seen)
+        else:
+            return self
+‘’’
+While setting this up I learned that mutable objects used as default parameters are initialized at import, not when the function is called, so the default object is used across function calls. It was messing up my functions! Not a mistake I’ll make a again…
+
+
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
 
