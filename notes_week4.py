@@ -65,7 +65,7 @@ class Node:
         """
 
         if _depth is 0:             # I added a variable that is only 0 when the external variable
-            _depth = 1              # is default (i.e. first recustion level).
+            _depth = 1              # is default (i.e. first recursion level).
             _seen = []
 
         if self in _seen:

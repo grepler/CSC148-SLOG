@@ -6,14 +6,16 @@ class Competitor:
     for each competitor.
     """
 
-    def __init__(self, address, email):
+    def __init__(self, name, email, address=""):
         """
-
-        :param address: str
+        :param name: str
         :param email: str
+        :param address: str
         """
-        self._addr = address
-        self._email = email
+        self._data = []
+        self._data[0] = name
+        self._data[1] = email
+        self._data[2] = address
 
     def __eq__(self, other):
         """
@@ -21,17 +23,25 @@ class Competitor:
         :param other: Competitor
         :return: bool
         >>> c1 = Competitor("Bob", "bob@gmail.com")
-        >>> c2 = Competitor("Tim", "tim@gmail.com")
-        >>> c3 = Competitor("Tim", "tim@gmail.com")
+        >>> c2 = Competitor("Tim", "tim@gmail.com","Toronto")
+        >>> c3 = Competitor("Tim", "tim@gmail.com","Toronto, Canada")
         >>> c1 == c2
         False
         >>> c2 == c3
         True
         """
 
-        return self._addr == other._addr and self._email == other._email
+        return self._data[0] == other._data[0] and self._data[1] == other._data[1]
 
-
+    def __str__(self):
+        """
+        Return a string of the Competitor's information.
+        :return: str
+        """
+        string = ""
+        for item in self._data:
+            string = string + ", " + item
+        return string
 
 class Runner(Competitor):
     """
