@@ -1,8 +1,8 @@
 # unittest learning document
 
 import unittest
-
-from Lab01/Lab01 import Competitor
+import notes_week4
+import Lab01.Competitor as Competitor
 
 
 class Test_Lab01(unittest.TestCase):
