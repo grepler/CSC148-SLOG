@@ -54,6 +54,9 @@ class Node:
 ‘’’
 While setting this up I learned that mutable objects used as default parameters are initialized at import, not when the function is called, so the default object is used across function calls. It was messing up my functions! Not a mistake I’ll make a again…
 
+Week 5 Notes:
+
+Playing with sets this week, they’re very powerful. They use a hash table like a dictionary – it looks like the early set implementation is a slightly altered version of the dictionary code in the python source. This means that they're faster to check membership, since the hash table is used firsts, and the da magic methods are only used after a collision. This is much faster than using ‘a in List’.
 
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
