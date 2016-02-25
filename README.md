@@ -54,9 +54,43 @@ class Node:
 ‘’’
 While setting this up I learned that mutable objects used as default parameters are initialized at import, not when the function is called, so the default object is used across function calls. It was messing up my functions! Not a mistake I’ll make a again…
 
-Week 5 Notes:
+# Week 5 Notes:
 
 Playing with sets this week, they’re very powerful. They use a hash table like a dictionary – it looks like the early set implementation is a slightly altered version of the dictionary code in the python source. This means that they're faster to check membership, since the hash table is used firsts, and the da magic methods are only used after a collision. This is much faster than using ‘a in List’.
+
+# Week 6 Notes:
+
+Recursion – very cool. I was playing with this in lecture. Also, working on assignment 1 was interesting, because it was difficult to get a birds-eye view of the entire simulation. I wrote a private method in our simulation as follows, which let me practice with writing to a log file directory. Using preview in Mac OS finder, I could quickly flip through the different stages of the simulation to see how the drivers and riders interacted.
+
+``` python
+def _print_status(self, step):
+        """
+        Print the current simulation status to file in Log folder.
+        Private method used for Simulation mapping.
+        @return: None
+        """
+        # This is a helper method for debugging, so we allow it to access private variables.
+        with open('log/sim event {:0>2}.txt'.format(str(step)), 'w') as log:
+            log.write("### Next Event ###\n=== Registered Drivers ===\n")
+            log.writelines("\n".join(
+                [str(x) for x in self._dispatcher.drivers]))
+            log.write("\n\n=== driver distances ===\n")
+            log.writelines("\n".join(
+                self._monitor._driver_distance_breakdown()))
+            log.write("\n=== Registered Riders ===\n")
+            log.writelines("\n".join(
+                [str(x) for x in self._dispatcher.riders]))
+            log.write("\n=== events ===\n")
+            log.writelines("\n".join(
+                [str(x) for x in self._events._items]))
+            # needs to access private list of events.
+            log.write("\n\n=== monitor activities ===\n")
+            log.writelines("\n".join(
+                [str(x) for x in self._monitor.activity_list()]))
+‘’’
+
+The above code means that you can custom pad the variables in your string format method, for example, {:0>2} will pad the string out to two digits with zeros.
+
 
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
