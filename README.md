@@ -96,6 +96,10 @@ The above code means that you can custom pad the variables in your string format
 
 I've managed large dtsearch databases so already know a bit about how to balance search trees, but it was interesting to build basic ones from scratch. Wit will be interesting to see how to rebuild them effectively – balancing trees is complicated problem.
 
+Week 9: Test Review
+
+We had a test: I was surprised by how simple the questions were. Based on past exams I thought I would be more pressed for time, but I went in prepared and answered all the questions with plenty of time to spare. Checked my work and caught a few bugs. Programming by pencil is a good time?
+
 
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
