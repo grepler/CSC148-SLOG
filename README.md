@@ -21,4 +21,5 @@ visit: http://www.cdf.toronto.edu/~csc148h/winter/SLOG/slog.pdf
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
 
-Our network graph looks like this:
+Our network graph lookedlike this at the end of the project:
+![network graph](https://github.com/grepler/CSC148-SLOG/blob/master/Blog-Pictures/CSC146-A2%20Network%20Graph.png "Network Path")
