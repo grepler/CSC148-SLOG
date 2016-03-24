@@ -16,3 +16,9 @@ print('hello GitHub!')
 
 For more information about the purpose of this repository, 
 visit: http://www.cdf.toronto.edu/~csc148h/winter/SLOG/slog.pdf
+
+
+It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
+In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
+
+Our network graph looks like this:
