@@ -100,6 +100,33 @@ Week 9: Test Review
 
 We had a test: I was surprised by how simple the questions were. Based on past exams I thought I would be more pressed for time, but I went in prepared and answered all the questions with plenty of time to spare. Checked my work and caught a few bugs. Programming by pencil is a good time?
 
+# Thoughts on Assignment 2:
+
+Our network graph looked like this at the end of the project:
+![network graph](https://github.com/grepler/CSC148-SLOG/blob/master/Blog-Pictures/CSC146-A2%20Network%20Graph.png "Network Path")
+
+I was able to dramatically increase the efficiency of my assignment 2 solvers by implementing hashing methods on our puzzles. This meant that we could use the set membership O(1) property to dramatically increase the speed of the longest part of our puzzle evaluation code – checking to see if the puzzle and tiers derivatives were previously examined. Prior to the implementation the list membership operation would increase O(n), to a point where it would take1.1 seconds to check against a list of 10k previously evaluated puzzles. I left our depth first solver running on a 7x7 grid peg puzzle overnight and it ran through 10k puzzles without a solution. After I implemented the hashing, it was able to evaluate the 7x7 puzzle in 328 seconds.
+
+A variant of that puzzle, which shifted the starting peg over by one, was given to the breadth-first solver. I think that that method of evaluation is inefficient for the type of puzzle, since there is  minimum number of potential moves in the late game, where the tree leaves appear. Early on there are far more moves but none of the puzzles are eliminated, so the breadth first needs to evaluate a large number of fruitless puzzles.
+
+Regardless, the hashing algorithm sped up the evaluation significantly – after 4 hours, my computer had evaluated 1.4 million past puzzles before I cancelled the run.
+
+``` python
+def __hash__(self):
+        """
+        Return hash of puzzle configuration.
+        @return: hash
+
+        """
+        tuple_list = []
+        for row in self._marker:
+            tuple_list.append(tuple(row))
+
+        return hash(tuple(tuple_list))
+‘’’
+
+In implementing the hast method, we initially ran into problems with mutable types, for example, theories peg puzzles includes a set of viable characters. But this doesn’t have any impact on the configuration of the board, which is a static list, so we chose to hash an n-tuple of n-tuples, allowing us to run the hash function over an immutable object.
+
 
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
