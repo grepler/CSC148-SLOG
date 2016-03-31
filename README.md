@@ -51,7 +51,7 @@ class Node:
             return Node.end_node(self.next_node, _depth, _seen)
         else:
             return self
-‘’’
+```
 While setting this up I learned that mutable objects used as default parameters are initialized at import, not when the function is called, so the default object is used across function calls. It was messing up my functions! Not a mistake I’ll make a again…
 
 # Week 5 Notes:
@@ -87,7 +87,7 @@ def _print_status(self, step):
             log.write("\n\n=== monitor activities ===\n")
             log.writelines("\n".join(
                 [str(x) for x in self._monitor.activity_list()]))
-‘’’
+```
 
 The above code means that you can custom pad the variables in your string format method, for example, {:0>2} will pad the string out to two digits with zeros.
 
@@ -123,7 +123,7 @@ def __hash__(self):
             tuple_list.append(tuple(row))
 
         return hash(tuple(tuple_list))
-‘’’
+```
 
 In implementing the hast method, we initially ran into problems with mutable types, for example, theories peg puzzles includes a set of viable characters. But this doesn’t have any impact on the configuration of the board, which is a static list, so we chose to hash an n-tuple of n-tuples, allowing us to run the hash function over an immutable object.
 
