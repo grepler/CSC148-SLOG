@@ -127,6 +127,10 @@ def __hash__(self):
 
 In implementing the hast method, we initially ran into problems with mutable types, for example, theories peg puzzles includes a set of viable characters. But this doesn’t have any impact on the configuration of the board, which is a static list, so we chose to hash an n-tuple of n-tuples, allowing us to run the hash function over an immutable object.
 
+# Week 11 Notes: Hashing Vindication!
+
+So we're  finally talking about hashing – how fun. The thing is though, that the python hash seed changes each time Python is initialized, so you’ll only get equivalent hashes within a single runtime unless your set the system seed value to a constant each time you import your module.
+
 
 It appears that my previous commits weren't being pushed up to the GitHub project, so I'll have to take a look at that.
 In the meantime, I've learned a lot about how to merge commits and forks into the master by using GitHub to manage the private repositories for Assignments 1 and 2. They're kind enough to permit five private repositories to University students.
