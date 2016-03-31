@@ -100,7 +100,7 @@ Week 9: Test Review
 
 We had a test: I was surprised by how simple the questions were. Based on past exams I thought I would be more pressed for time, but I went in prepared and answered all the questions with plenty of time to spare. Checked my work and caught a few bugs. Programming by pencil is a good time?
 
-# Thoughts on Assignment 2:
+# Week 9: Thoughts on Assignment 2
 
 Our network graph looked like this at the end of the project:
 ![network graph](https://github.com/grepler/CSC148-SLOG/blob/master/Blog-Pictures/CSC146-A2%20Network%20Graph.png "Network Path")
